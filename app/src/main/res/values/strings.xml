@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">نور</string>
+    <string name="tagline">رحلة التعافي والحرية</string>
+    <string name="start_journey">✦ ابدأ رحلة التعافي</string>
+    <string name="choose_addiction">اختر ما تريد الإقلاع عنه</string>
+    <string name="craving_help">🌊 أشعر برغبة شديدة — ساعدني</string>
+    <string name="reset">↺ إعادة البدء من الصفر</string>
+    <string name="days">يوم</string>
+    <string name="hours">ساعة</string>
+    <string name="minutes">دقيقة</string>
+    <string name="seconds">ثانية</string>
+    <string name="milestones_title">محطات الإنجاز</string>
+    <string name="tips_title">نصائح للصمود</string>
+    <string name="home">الرئيسية</string>
+    <string name="milestones">الإنجازات</string>
+    <string name="tips">نصائح</string>
+    <string name="craving_title">تجاوز هذه اللحظة</string>
+    <string name="craving_body">الرغبة موجة — ستمر. تنفّس معي ببطء...</string>
+    <string name="craving_reminder">ذكّر نفسك: لقد صمدتَ حتى الآن، وهذا الإنجاز يستحق الحفاظ عليه.</string>
+    <string name="craving_done">✦ لقد تجاوزتها</string>
+    <string name="inhale">شهيق</string>
+    <string name="exhale">زفير</string>
+</resources>
