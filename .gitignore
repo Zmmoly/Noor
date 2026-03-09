@@ -1,0 +1,29 @@
+# Gradle files
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.jar
+!gradle/wrapper/gradle-wrapper.properties
+
+# Android Studio files
+*.iml
+.idea/
+local.properties
+captures/
+.externalNativeBuild/
+.cxx/
+
+# Keystore files (NEVER commit these)
+*.jks
+*.keystore
+!debug.keystore
+
+# Generated files
+app/src/main/assets/
+app/release/
+
+# Log files
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
