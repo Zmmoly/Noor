@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/night">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="نور"
+            android:textSize="38sp"
+            android:textStyle="bold"
+            android:textColor="@color/gold"
+            android:fontFamily="serif"
+            android:layout_gravity="center"
+            android:layout_marginTop="16dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/bg_card"
+            android:padding="24dp"
+            android:layout_marginTop="16dp">
+
+            <TextView
+                android:id="@+id/tvSubtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="منذ توقفت..."
+                android:textSize="12sp"
+                android:textColor="@color/gold"
+                android:letterSpacing="0.1"
+                android:layout_marginBottom="20dp" />
+
+            <FrameLayout
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_gravity="center">
+
+                <com.google.android.material.progressindicator.CircularProgressIndicator
+                    android:id="@+id/circularProgress"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:trackThickness="10dp"
+                    app:indicatorColor="@color/gold"
+                    app:trackColor="#2A1848"
+                    app:trackCornerRadius="5dp"
+                    android:progress="0"
+                    android:max="100" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/tvDays"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:textSize="52sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/gold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/days"
+                        android:textSize="12sp"
+                        android:textColor="@color/textSecondary"
+                        android:letterSpacing="0.15" />
+                </LinearLayout>
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="3"
+                android:layout_marginTop="20dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:background="@drawable/bg_stat_box"
+                    android:padding="12dp"
+                    android:layout_marginEnd="6dp">
+                    <TextView
+                        android:id="@+id/tvHours"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:textSize="22sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/teal" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/hours"
+                        android:textSize="11sp"
+                        android:textColor="@color/textSecondary"
+                        android:layout_marginTop="2dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:background="@drawable/bg_stat_box"
+                    android:padding="12dp"
+                    android:layout_marginStart="3dp"
+                    android:layout_marginEnd="3dp">
+                    <TextView
+                        android:id="@+id/tvMinutes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:textSize="22sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/teal" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/minutes"
+                        android:textSize="11sp"
+                        android:textColor="@color/textSecondary"
+                        android:layout_marginTop="2dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:background="@drawable/bg_stat_box"
+                    android:padding="12dp"
+                    android:layout_marginStart="6dp">
+                    <TextView
+                        android:id="@+id/tvSeconds"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:textSize="22sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/teal" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/seconds"
+                        android:textSize="11sp"
+                        android:textColor="@color/textSecondary"
+                        android:layout_marginTop="2dp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btnCraving"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/craving_help"
+                android:textColor="@color/rose"
+                android:textSize="14sp"
+                android:background="@drawable/bg_btn_craving"
+                android:stateListAnimator="@null" />
+
+            <Button
+                android:id="@+id/btnReset"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:layout_marginTop="10dp"
+                android:text="@string/reset"
+                android:textColor="@color/textHint"
+                android:textSize="12sp"
+                android:background="@android:color/transparent"
+                android:stateListAnimator="@null" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/bg_card"
+            android:padding="24dp"
+            android:layout_marginTop="12dp"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/tvQuote"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="&#8220;كل لحظة صبر هي خطوة نحو نفسٍ أكثر حرية&#8221;"
+                android:textSize="16sp"
+                android:textColor="@color/textPrimary"
+                android:textStyle="italic"
+                android:gravity="center"
+                android:lineSpacingMultiplier="1.6"
+                android:fontFamily="serif" />
+
+            <TextView
+                android:id="@+id/tvQuoteSource"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="— رحلة نور"
+                android:textSize="11sp"
+                android:textColor="@color/gold"
+                android:layout_marginTop="12dp"
+                android:alpha="0.7" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>
