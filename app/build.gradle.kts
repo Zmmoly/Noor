@@ -42,4 +42,5 @@ dependencies {
     implementation(libs.kotlinx.coroutines)
     implementation(libs.datastore.preferences)
     implementation(libs.gson)
+    implementation("androidx.fragment:fragment-ktx:1.7.1")
 }
