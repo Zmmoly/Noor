@@ -5,17 +5,14 @@ on:
     branches: [ main, master, develop ]
   pull_request:
     branches: [ main, master ]
-  workflow_dispatch:  # Allow manual trigger from GitHub UI
+  workflow_dispatch:
 
-# Cancel in-progress runs on the same branch
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
-  # ─────────────────────────────────────────────
-  # Job 1: Build Debug APK
-  # ─────────────────────────────────────────────
+
   build:
     name: Build Debug APK
     runs-on: ubuntu-latest
@@ -32,29 +29,18 @@ jobs:
           distribution: 'temurin'
           cache: 'gradle'
 
-      # Bootstrap the Gradle wrapper jar if it's missing (common in repos that
-      # don't commit binary files). This step installs Gradle 8.6 and regenerates
-      # the wrapper so that ./gradlew works correctly in all subsequent steps.
       - name: Bootstrap Gradle Wrapper
         run: |
           if [ ! -f gradle/wrapper/gradle-wrapper.jar ]; then
-            echo "gradle-wrapper.jar not found — bootstrapping..."
             GRADLE_VERSION=8.6
-            GRADLE_ZIP=gradle-${GRADLE_VERSION}-bin.zip
-            curl -fsSL "https://services.gradle.org/distributions/${GRADLE_ZIP}" -o /tmp/${GRADLE_ZIP}
-            unzip -q /tmp/${GRADLE_ZIP} -d /tmp/gradle-dist
-            /tmp/gradle-dist/gradle-${GRADLE_VERSION}/bin/gradle wrapper \
-              --gradle-version=${GRADLE_VERSION} \
-              --distribution-type=bin
-            echo "Wrapper bootstrapped successfully"
-          else
-            echo "gradle-wrapper.jar already present"
+            curl -fsSL "https://services.gradle.org/distributions/gradle-${GRADLE_VERSION}-bin.zip" -o /tmp/gradle.zip
+            unzip -q /tmp/gradle.zip -d /tmp/gradle-dist
+            /tmp/gradle-dist/gradle-${GRADLE_VERSION}/bin/gradle wrapper --gradle-version=${GRADLE_VERSION} --distribution-type=bin
           fi
 
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
 
-      # Cache Gradle dependencies between runs for faster builds
       - name: Cache Gradle packages
         uses: actions/cache@v4
         with:
@@ -77,14 +63,11 @@ jobs:
           path: app/build/outputs/apk/debug/*.apk
           retention-days: 14
 
-  # ─────────────────────────────────────────────
-  # Job 2: Lint Check
-  # ─────────────────────────────────────────────
   lint:
     name: Lint Check
     runs-on: ubuntu-latest
     timeout-minutes: 20
-    needs: build  # Only run if build succeeded
+    needs: build
 
     steps:
       - name: Checkout code
@@ -132,9 +115,6 @@ jobs:
           path: app/build/reports/lint-results-debug.html
           retention-days: 7
 
-  # ─────────────────────────────────────────────
-  # Job 3: Release APK (only on main/master)
-  # ─────────────────────────────────────────────
   release:
     name: Build Release APK
     runs-on: ubuntu-latest
@@ -175,20 +155,13 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-gradle-
 
-      # Sign with a debug keystore for now. 
-      # For production: add KEYSTORE_FILE, KEY_ALIAS, KEY_PASSWORD, STORE_PASSWORD as GitHub Secrets.
-      - name: Build Release APK (unsigned)
+      - name: Build Release APK
         run: ./gradlew assembleRelease --no-daemon
         env:
           GRADLE_OPTS: "-Dorg.gradle.daemon=false -Dorg.gradle.workers.max=2"
 
-      # Optional: Sign with keystore if secrets are configured
       - name: Sign Release APK
-        if: |
-          secrets.KEYSTORE_BASE64 != '' &&
-          secrets.KEY_ALIAS != '' &&
-          secrets.KEY_PASSWORD != '' &&
-          secrets.STORE_PASSWORD != ''
+        if: ${{ secrets.KEYSTORE_BASE64 != '' }}
         uses: r0adkll/sign-android-release@v1
         with:
           releaseDirectory: app/build/outputs/apk/release
@@ -204,7 +177,6 @@ jobs:
           path: app/build/outputs/apk/release/*.apk
           retention-days: 30
 
-      # Create a GitHub Release on tag push
       - name: Create GitHub Release
         if: startsWith(github.ref, 'refs/tags/v')
         uses: softprops/action-gh-release@v2
