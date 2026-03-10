@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/night"
+    android:padding="20dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp">
+
+        <TextView
+            android:id="@+id/tvTreatmentEmoji"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="💪"
+            android:textSize="28sp"
+            android:layout_marginEnd="12dp" />
+
+        <TextView
+            android:id="@+id/tvTreatmentTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="البرنامج العلاجي"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="@color/gold" />
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvTreatment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:paddingBottom="16dp" />
+
+</LinearLayout>
