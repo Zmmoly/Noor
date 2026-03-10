@@ -12,7 +12,6 @@
         android:padding="24dp"
         android:gravity="center_horizontal">
 
-        <!-- Logo -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -33,7 +32,6 @@
             android:layout_marginTop="4dp"
             android:layout_marginBottom="40dp" />
 
-        <!-- Card -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -50,47 +48,159 @@
                 android:letterSpacing="0.12"
                 android:layout_marginBottom="16dp" />
 
-            <!-- Grid Row 1 -->
-            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:weightSum="2">
-                <LinearLayout android:id="@+id/cardSmoking" android:layout_width="0dp" android:layout_height="80dp" android:layout_weight="1" android:orientation="vertical" android:gravity="center" android:background="@drawable/bg_addiction_card" android:layout_marginEnd="6dp" android:clickable="true" android:focusable="true">
+            <!-- Row 1 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <LinearLayout
+                    android:id="@+id/cardSmoking"
+                    android:layout_width="0dp"
+                    android:layout_height="80dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:background="@drawable/bg_addiction_card"
+                    android:layout_marginEnd="6dp"
+                    android:clickable="true"
+                    android:focusable="true">
                     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="🚬" android:textSize="28sp"/>
                     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="التدخين" android:textSize="13sp" android:textColor="@color/textPrimary" android:layout_marginTop="4dp"/>
                 </LinearLayout>
-                <LinearLayout android:id="@+id/cardAlcohol" android:layout_width="0dp" android:layout_height="80dp" android:layout_weight="1" android:orientation="vertical" android:gravity="center" android:background="@drawable/bg_addiction_card" android:layout_marginStart="6dp" android:clickable="true" android:focusable="true">
+
+                <LinearLayout
+                    android:id="@+id/cardAlcohol"
+                    android:layout_width="0dp"
+                    android:layout_height="80dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:background="@drawable/bg_addiction_card"
+                    android:layout_marginStart="6dp"
+                    android:clickable="true"
+                    android:focusable="true">
                     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="🍷" android:textSize="28sp"/>
                     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="الكحول" android:textSize="13sp" android:textColor="@color/textPrimary" android:layout_marginTop="4dp"/>
                 </LinearLayout>
+
             </LinearLayout>
 
             <View android:layout_width="match_parent" android:layout_height="12dp"/>
 
-            <!-- Grid Row 2 -->
-            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:weightSum="2">
-                <LinearLayout android:id="@+id/cardGaming" android:layout_width="0dp" android:layout_height="80dp" android:layout_weight="1" android:orientation="vertical" android:gravity="center" android:background="@drawable/bg_addiction_card" android:layout_marginEnd="6dp" android:clickable="true" android:focusable="true">
+            <!-- Row 2 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <LinearLayout
+                    android:id="@+id/cardGaming"
+                    android:layout_width="0dp"
+                    android:layout_height="80dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:background="@drawable/bg_addiction_card"
+                    android:layout_marginEnd="6dp"
+                    android:clickable="true"
+                    android:focusable="true">
                     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="🎮" android:textSize="28sp"/>
                     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="إدمان الألعاب" android:textSize="12sp" android:textColor="@color/textPrimary" android:layout_marginTop="4dp"/>
                 </LinearLayout>
-                <LinearLayout android:id="@+id/cardSocial" android:layout_width="0dp" android:layout_height="80dp" android:layout_weight="1" android:orientation="vertical" android:gravity="center" android:background="@drawable/bg_addiction_card" android:layout_marginStart="6dp" android:clickable="true" android:focusable="true">
+
+                <LinearLayout
+                    android:id="@+id/cardSocial"
+                    android:layout_width="0dp"
+                    android:layout_height="80dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:background="@drawable/bg_addiction_card"
+                    android:layout_marginStart="6dp"
+                    android:clickable="true"
+                    android:focusable="true">
                     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="📱" android:textSize="28sp"/>
                     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="السوشيال ميديا" android:textSize="12sp" android:textColor="@color/textPrimary" android:layout_marginTop="4dp"/>
                 </LinearLayout>
+
             </LinearLayout>
 
             <View android:layout_width="match_parent" android:layout_height="12dp"/>
 
-            <!-- Grid Row 3 -->
-            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:weightSum="2">
-                <LinearLayout android:id="@+id/cardDrugs" android:layout_width="0dp" android:layout_height="80dp" android:layout_weight="1" android:orientation="vertical" android:gravity="center" android:background="@drawable/bg_addiction_card" android:layout_marginEnd="6dp" android:clickable="true" android:focusable="true">
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="💊" android:textSize="28sp"/>
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="المخدرات" android:textSize="13sp" android:textColor="@color/textPrimary" android:layout_marginTop="4dp"/>
+            <!-- Row 3 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <LinearLayout
+                    android:id="@+id/cardShopping"
+                    android:layout_width="0dp"
+                    android:layout_height="80dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:background="@drawable/bg_addiction_card"
+                    android:layout_marginEnd="6dp"
+                    android:clickable="true"
+                    android:focusable="true">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="🛍️" android:textSize="28sp"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="التسوق القهري" android:textSize="12sp" android:textColor="@color/textPrimary" android:layout_marginTop="4dp"/>
                 </LinearLayout>
-                <LinearLayout android:id="@+id/cardOther" android:layout_width="0dp" android:layout_height="80dp" android:layout_weight="1" android:orientation="vertical" android:gravity="center" android:background="@drawable/bg_addiction_card" android:layout_marginStart="6dp" android:clickable="true" android:focusable="true">
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="🔗" android:textSize="28sp"/>
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="أخرى" android:textSize="13sp" android:textColor="@color/textPrimary" android:layout_marginTop="4dp"/>
+
+                <LinearLayout
+                    android:id="@+id/cardPorn"
+                    android:layout_width="0dp"
+                    android:layout_height="80dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:background="@drawable/bg_addiction_card"
+                    android:layout_marginStart="6dp"
+                    android:clickable="true"
+                    android:focusable="true">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="🔒" android:textSize="28sp"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="الإباحية" android:textSize="13sp" android:textColor="@color/textPrimary" android:layout_marginTop="4dp"/>
                 </LinearLayout>
+
             </LinearLayout>
 
-            <!-- Start Button -->
+            <View android:layout_width="match_parent" android:layout_height="12dp"/>
+
+            <!-- Row 4 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <LinearLayout
+                    android:id="@+id/cardGambling"
+                    android:layout_width="0dp"
+                    android:layout_height="80dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:background="@drawable/bg_addiction_card"
+                    android:layout_marginEnd="6dp"
+                    android:clickable="true"
+                    android:focusable="true">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="🎲" android:textSize="28sp"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="القمار" android:textSize="13sp" android:textColor="@color/textPrimary" android:layout_marginTop="4dp"/>
+                </LinearLayout>
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="80dp"
+                    android:layout_weight="1"
+                    android:layout_marginStart="6dp"/>
+
+            </LinearLayout>
+
             <Button
                 android:id="@+id/btnStart"
                 android:layout_width="match_parent"
@@ -102,6 +212,7 @@
                 android:textStyle="bold"
                 android:background="@drawable/bg_btn_gold"
                 android:stateListAnimator="@null" />
+
         </LinearLayout>
     </LinearLayout>
 </ScrollView>
