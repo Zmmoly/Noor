@@ -37,18 +37,18 @@ class SetupActivity : AppCompatActivity() {
 
     private fun setupAddictionGrid() {
         val cards = listOf(
-            binding.cardSmoking,
-            binding.cardAlcohol,
-            binding.cardGaming,
-            binding.cardSocial,
-            binding.cardDrugs,
-            binding.cardOther
+            binding.cardSmoking  to AddictionTypes.all[0].id,
+            binding.cardAlcohol  to AddictionTypes.all[1].id,
+            binding.cardGaming   to AddictionTypes.all[2].id,
+            binding.cardSocial   to AddictionTypes.all[3].id,
+            binding.cardShopping to AddictionTypes.all[4].id,
+            binding.cardPorn     to AddictionTypes.all[5].id,
+            binding.cardGambling to AddictionTypes.all[6].id
         )
-        cards.forEachIndexed { index, card ->
-            val type = AddictionTypes.all[index]
+        cards.forEach { (card, typeId) ->
             card.setOnClickListener {
-                selectedTypeId = type.id
-                cards.forEach { c -> c.isSelected = false }
+                selectedTypeId = typeId
+                cards.forEach { (c, _) -> c.isSelected = false }
                 card.isSelected = true
             }
         }
