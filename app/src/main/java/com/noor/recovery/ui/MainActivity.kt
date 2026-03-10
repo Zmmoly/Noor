@@ -32,6 +32,7 @@ class MainActivity : AppCompatActivity() {
         binding.bottomNav.setOnItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.nav_home       -> { loadFragment(HomeFragment()); true }
+                R.id.nav_treatment  -> { loadFragment(TreatmentFragment()); true }
                 R.id.nav_milestones -> { loadFragment(MilestonesFragment()); true }
                 R.id.nav_tips       -> { loadFragment(TipsFragment()); true }
                 else -> false
